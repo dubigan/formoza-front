@@ -1,0 +1,76 @@
+$color-primary: rgb(0, 100, 255);
+$table-font-size: 0.9rem;
+$oak-table-bg: transparent;
+$oak-table-striped-color: #212529;
+$oak-table-striped-bg: rgba(0, 0, 0, 0.05);
+$oak-table-active-color: #212529;
+$oak-table-active-bg: rgba(0, 0, 0, 0.1);
+$oak-table-hover-color: #212529;
+$oak-table-hover-bg: rgba(0, 0, 0, 0.075);
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-color: #dee2e6;
+}
+
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  $oak-table-accent-bg: $oak-table-striped-bg;
+  color: $oak-table-striped-color;
+}
+
+.table-bordered > :not(caption) > * {
+  border-width: 1px 0;
+}
+
+.table > tbody {
+  vertical-align: inherit;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  &:hover {
+    background-color: $oak-table-hover-bg;
+  }
+}
+
+th {
+  vertical-align: bottom;
+  opacity: 1;
+  //background-color: white;
+  //color: black;
+}
+
+td {
+  vertical-align: middle;
+  color: $color-primary;
+  font-size: $table-font-size;
+}

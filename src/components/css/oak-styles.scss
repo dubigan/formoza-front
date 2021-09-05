@@ -1,0 +1,125 @@
+@use 'vars';
+@use 'row';
+@use 'buttons';
+@use 'tooltips';
+@use 'forms';
+@use 'table';
+@use 'modal';
+@use 'width';
+@use 'fonts';
+@use 'card';
+@use 'indents';
+@use 'align';
+//@use 'smart-grid' as *;
+
+//$color-primary: black;
+
+* {
+  box-sizing: border-box;
+}
+
+// tr {
+//   .table-header {
+//     position: -webkit-sticky;
+//     position: sticky;
+//     top: 0;
+//     z-index: 2;
+//   }
+// }
+
+.order-buttons-container {
+  @include row.oak-row-nowrap;
+  width: auto;
+  //margin: 2px 0px;
+  background-color: white;
+  //justify-content: space-between;
+  .oak-btn-primary {
+    font-size: table.$table-font-size;
+    margin: 1px;
+  }
+}
+
+.dates-container {
+  .oak-btn-primary {
+    width: auto;
+  }
+  // .oak-row {
+  //   flex-wrap: nowrap;
+  // }
+  .datetime-container {
+    @include row.oak-row-wrap;
+    width: auto;
+    .react-datetime-picker__wrapper {
+      border-style: none;
+    }
+  }
+}
+
+.sorted-tr {
+  .oak-row {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+}
+
+.arrow,
+.sorted-name {
+  width: auto;
+  margin-left: 2px;
+  justify-content: center;
+}
+
+// .sorted-name {
+//   width: auto;
+// }
+
+.toggleButtonGroup {
+  //@include forms.oak-form-control;
+  @include row.oak-row-nowrap;
+  padding: 0px;
+  margin: 0.1rem 0rem;
+  border-style: none;
+  justify-content: space-between;
+  position: relative;
+  &__label {
+    @include buttons.oak-btn-outline-primary;
+    @include width.oak-size(4);
+    text-align: center;
+    //width: 100%;
+    margin: 0px;
+  }
+}
+
+.oakService {
+  &__headerTitle,
+  &__footerTitle {
+    @include width.oak-size(4);
+    margin: 0px;
+    padding: 0px;
+  }
+  &__headerInfo,
+  &__footerInfo {
+    @include width.oak-size(1);
+    color: vars.$oak-danger;
+    text-align: right;
+  }
+  &__discount {
+    @include width.oak-size(12);
+    text-align: right;
+  }
+  &__select,
+  &__summa {
+    border-width: thin;
+    border-color: vars.$oak-light;
+    border-radius: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-right: 0.5rem;
+  }
+  &__select {
+    @include width.oak-size(4);
+  }
+  &__summa {
+    text-align: right;
+    @include width.oak-size(2);
+  }
+}
